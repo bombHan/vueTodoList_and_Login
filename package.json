@@ -1,0 +1,121 @@
+{
+  "name": "vueTest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack-dev-server -d --inline --hot --open --env.dev",
+    "mock": "webpack-dev-server -d --inline --hot --open --env.dev --env.mock",
+    "build": "rimraf dist && webpack -p --progress --hide-modules",
+    "lint": "node node_modules/eslint/bin/eslint.js src/**/*.js src/**/*.vue",
+    "lint-fix": "node node_modules/eslint/bin/eslint.js src/**/*.js src/**/*.vue --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "hansh",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.6.0",
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.13.2",
+    "css-loader": "^0.26.1",
+    "ejs-loader": "^0.3.0",
+    "eslint": "^3.12.2",
+    "eslint-config-enough": "^0.2.2",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-html": "^3.2.2",
+    "express": "^4.15.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.9.0",
+    "git-commit-hook": "^1.1.3",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.4",
+    "postcss-loader": "^1.2.1",
+    "pug": "^2.0.0-rc.4",
+    "pug-loader": "^2.3.0",
+    "querystring": "^0.2.0",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "vue-loader": "^10.0.0",
+    "vue-resource": "^1.3.3",
+    "vue-template-compiler": "^2.3.3",
+    "vuex": "^2.3.1",
+    "webpack": "^2.2.0-rc.4",
+    "webpack-dev-server": "2.2.0"
+  },
+  "dependencies": {
+    "axios": "^0.17.0",
+    "element-ui": "^2.0.5",
+    "element-ui-plugin": "0.0.2",
+    "vue": "^2.3.3",
+    "vue-router": "^3.0.1"
+  },
+  "pre-commit": {
+    "git": {
+      "id": "",
+      "private-token": "",
+      "namespace": "yypt-group",
+      "label": [
+        {
+          "name": "Bug 普通",
+          "color": "#d9534f"
+        },
+        {
+          "name": "Combine 联调",
+          "color": "#428BCA"
+        },
+        {
+          "name": "Complete 完成",
+          "color": "#019875"
+        },
+        {
+          "name": "Critical 紧急",
+          "color": "#FF3322"
+        },
+        {
+          "name": "Discussion 讨论",
+          "color": "#7F8C8D"
+        },
+        {
+          "name": "Document 需求文档",
+          "color": "#f0ad4e"
+        },
+        {
+          "name": "Enhancement 改进",
+          "color": "#77dd77"
+        },
+        {
+          "name": "Feature 功能",
+          "color": "#5cb85c"
+        },
+        {
+          "name": "Pending 待确认",
+          "color": "#34495E"
+        },
+        {
+          "name": "Suggestion 建议",
+          "color": "#8E44AD"
+        }
+      ]
+    },
+    "pass": [
+      "^merge",
+      "^first\\s+commit",
+      "^reversion",
+      "^update\\s+[a-zA-Z0-9\\/\\-\\._]*.(json|md|gitignore|bowerrc|npmrc|cnpmrc)"
+    ],
+    "scripts": {
+      "precommit": "npm run lint",
+      "postcommit": ""
+    }
+  }
+}
